@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>予妳 YUNI｜霧眉品牌整合行銷企劃 — 邱亭瑜 作品集</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Google Fonts: Noto Serif TC 與 Noto Sans TC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 設定品牌專屬 Tailwind 色票與字體 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        yuni: {
+                            bg: '#F5F2EC',      // 柔霧米白
+                            oat: '#CDB8A3',     // 燕麥奶茶
+                            caramel: '#A77C5B', // 暖焦糖棕
+                            wood: '#A75A35',    // 深木棕
+                            coffee: '#352F27',  // 碳咖啡
+                            surface: '#FAF8F5', // 亮米白卡片底
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', '"Inter"', 'sans-serif'],
+                        serif: ['"Noto Serif TC"', 'serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 30px -10px rgba(53, 47, 39, 0.08)',
+                        'card': '0 4px 20px rgba(167, 124, 91, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-yuni-bg text-yuni-coffee font-sans antialiased selection:bg-yuni-oat selection:text-yuni-coffee overflow-x-hidden">
+
+    <!-- 複製色碼提示框 (Toast Notification，取代 alert) -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-yuni-coffee text-yuni-bg px-5 py-3 rounded-2xl shadow-lg flex items-center gap-3 text-sm pointer-events-none">
+        <span class="w-2 h-2 rounded-full bg-yuni-oat"></span>
+        <span id="toast-message">已複製色碼</span>
+    </div>
+
+    <!-- 頂部固定導覽列 -->
+    <header class="sticky top-0 z-40 bg-yuni-bg/90 backdrop-blur-md border-b border-yuni-oat/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- 左側品牌識別 -->
+            <a href="#top" class="flex items-center gap-2.5 group">
+                <div class="w-8 h-8 rounded-full bg-yuni-coffee text-yuni-bg flex items-center justify-center font-serif text-sm font-semibold tracking-wider group-hover:bg-yuni-wood transition-colors">
+                    Y
+                </div>
+                <div>
+                    <span class="font-serif font-semibold tracking-wide text-base">予妳 YUNI</span>
+                    <span class="hidden sm:inline-block text-xs text-yuni-caramel ml-2 pl-2 border-l border-yuni-oat">行銷企劃作品集</span>
+                </div>
+            </a>
+
+            <!-- 桌面版章節導覽 -->
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-yuni-coffee/80">
+                <a href="#brand" class="hover:text-yuni-wood transition-colors">01 品牌識別</a>
+                <a href="#research" class="hover:text-yuni-wood transition-colors">02 市場洞察</a>
+                <a href="#strategy" class="hover:text-yuni-wood transition-colors">03 服務與4P</a>
+                <a href="#digital" class="hover:text-yuni-wood transition-colors">04 數位導流</a>
+                <a href="#mockup" class="hover:text-yuni-wood transition-colors">05 官網落地預覽</a>
+            </nav>
+
+            <!-- 企劃作者標籤 -->
+            <div class="flex items-center gap-2">
+                <span class="text-xs px-3 py-1.5 rounded-full bg-yuni-oat/30 text-yuni-coffee font-medium">
+                    企劃提案｜邱亭瑜
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主視覺區 (Hero Section) -->
+    <section id="top" class="relative pt-12 pb-20 sm:pt-20 sm:pb-28 overflow-hidden">
+        <!-- 裝飾性背景圓弧 -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-yuni-oat/20 blur-3xl pointer-events-none"></div>
+        <div class="absolute top-40 -left-24 w-72 h-72 rounded-full bg-yuni-caramel/10 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                <!-- 左側文案 -->
+                <div class="lg:col-span-7 space-y-6">
+                    <!-- 作品集技能標籤 -->
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full bg-yuni-surface border border-yuni-oat/50 text-xs text-yuni-caramel font-medium">#品牌從0到1建構</span>
+                        <span class="px-3 py-1 rounded-full bg-yuni-surface border border-yuni-oat/50 text-xs text-yuni-caramel font-medium">#美業在地行銷</span>
+                        <span class="px-3 py-1 rounded-full bg-yuni-surface border border-yuni-oat/50 text-xs text-yuni-caramel font-medium">#STP與4P策略</span>
+                        <span class="px-3 py-1 rounded-full bg-yuni-surface border border-yuni-oat/50 text-xs text-yuni-caramel font-medium">#SEO與社群內容佈局</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <p class="text-sm tracking-[0.25em] text-yuni-wood font-medium uppercase">INTEGRATED MARKETING PROPOSAL</p>
+                        <h1 class="font-serif text-3xl sm:text-5xl font-bold leading-tight text-yuni-coffee">
+                            予妳 YUNI<br>
+                            <span class="text-2xl sm:text-4xl font-normal text-yuni-caramel mt-2 block">不複製漂亮，只設計像妳的眉。</span>
+                        </h1>
+                    </div>
+
+                    <p class="text-base sm:text-lg text-yuni-coffee/80 leading-relaxed max-w-2xl">
+                        本企劃為針對桃園平鎮、中壢生活圈 25–35 歲女性所規劃的客製化霧眉品牌全案。從品牌起源、視覺識別系統建立，到市場環境分析、服務體驗設計與數位導流閉環，完整呈現品牌由零啟動的策略藍圖。
+                    </p>
+
+                    <!-- 核心價值三關鍵字 -->
+                    <div class="pt-2 flex flex-wrap items-center gap-4 sm:gap-6">
+                        <div class="flex items-center gap-3 bg-yuni-surface px-5 py-3 rounded-2xl border border-yuni-oat/40 shadow-card">
+                            <span class="font-serif text-lg font-semibold text-yuni-wood">懂妳</span>
+                            <span class="text-yuni-oat">|</span>
+                            <span class="font-serif text-lg font-semibold text-yuni-caramel">予妳</span>
+                            <span class="text-yuni-oat">|</span>
+                            <span class="font-serif text-lg font-semibold text-yuni-coffee">像妳</span>
+                        </div>
+
+                        <a href="#brand" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-yuni-coffee text-yuni-bg text-sm font-medium hover:bg-yuni-wood transition-all shadow-soft">
+                            <span>開始瀏覽企劃全案</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 右側視覺卡片 -->
+                <div class="lg:col-span-5">
+                    <div class="bg-yuni-surface p-6 sm:p-8 rounded-3xl border border-yuni-oat/40 shadow-soft relative">
+                        <!-- 品牌流動線條 SVG 意象 -->
+                        <div class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-[#EFE9DF] to-[#DFD0C0] flex flex-col items-center justify-center p-6 relative overflow-hidden">
+                            <svg viewBox="0 0 260 120" class="w-56 h-auto mb-3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- 柔和流動的 YUNI 品牌曲線意象 -->
+                                <path d="M25 35 C 55 25, 65 95, 95 95 C 125 95, 130 40, 165 40 C 195 40, 205 90, 235 80" stroke="#A77C5B" stroke-width="3.5" stroke-linecap="round"/>
+                                <path d="M40 25 C 68 45, 72 105, 110 85 C 145 65, 155 25, 195 55" stroke="#A75A35" stroke-width="2" stroke-linecap="round" stroke-opacity="0.7"/>
+                                <circle cx="222" cy="38" r="4.5" fill="#A77C5B"/>
+                            </svg>
+                            <span class="font-serif text-3xl tracking-[0.3em] text-yuni-coffee font-semibold">YUNI</span>
+                            <span class="text-xs tracking-[0.2em] text-yuni-caramel mt-1">BESPOKE BROW STUDIO</span>
+                        </div>
+
+                        <!-- 專案基本資訊摘要 -->
+                        <div class="mt-6 grid grid-cols-2 gap-4 text-sm">
+                            <div class="p-3.5 rounded-2xl bg-yuni-bg/70">
+                                <span class="text-xs text-yuni-caramel block mb-1">目標生活圈</span>
+                                <span class="font-medium">桃園平鎮・中壢地區</span>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-yuni-bg/70">
+                                <span class="text-xs text-yuni-caramel block mb-1">核心轉換目標</span>
+                                <span class="font-medium">LINE 諮詢與一對一預約</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第一章：品牌起源、理念與視覺識別 -->
+    <section id="brand" class="py-16 sm:py-24 bg-yuni-surface border-y border-yuni-oat/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- 章節標題 -->
+            <div class="max-w-2xl mb-12">
+                <span class="text-xs font-semibold tracking-[0.2em] text-yuni-wood uppercase">CHAPTER 01 — BRAND IDENTITY</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold mt-2">品牌起源、核心理念與視覺識別系統</h2>
+                <p class="text-yuni-coffee/75 mt-3 text-sm sm:text-base leading-relaxed">
+                    透過柔和流動的線條與低飽和度的大地色票，建立溫暖、無壓迫感的品牌第一印象，傳遞「美，不是變成別人，而是更像自己」的核心價值。
+                </p>
+            </div>
+
+            <!-- 品牌故事與理念三部曲 -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-14">
+                <!-- 左側：品牌起源故事 -->
+                <div class="lg:col-span-5 bg-yuni-bg p-7 sm:p-8 rounded-3xl border border-yuni-oat/40 flex flex-col justify-between">
+                    <div>
+                        <span class="inline-block px-3 py-1 rounded-full bg-yuni-oat/30 text-yuni-wood text-xs font-medium mb-4">品牌起源 Origin</span>
+                        <h3 class="font-serif text-xl font-semibold mb-4 leading-snug">「曾經，我也在尋找自己喜歡的樣子。」</h3>
+                        <p class="text-sm sm:text-base text-yuni-coffee/85 leading-relaxed space-y-3">
+                            接觸霧眉後，創辦人發現霧眉不只是單純改變眉型，更能讓一個人在素顏或日常忙碌時，重新看見自己的美。這份真實的感動，成為創立「予妳 YUNI」的起點——希望陪伴每位來到這裡的女生，找到真正適合自己的樣子。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-5 border-t border-yuni-oat/40 text-xs text-yuni-caramel flex items-center justify-between">
+                        <span>品牌核心精神</span>
+                        <span class="font-serif font-medium text-yuni-coffee">細膩・自然・個人化</span>
+                    </div>
+                </div>
+
+                <!-- 右側：懂妳 / 予妳 / 像妳 -->
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-5">
+                    <div class="bg-yuni-bg p-6 rounded-3xl border border-yuni-oat/40 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                        <div>
+                            <span class="block text-xs font-mono text-yuni-caramel tracking-widest whitespace-nowrap">01 / UNDERSTAND</span>
+                            <h4 class="font-serif text-2xl font-bold text-yuni-wood mt-2 mb-3">懂妳</h4>
+                            <p class="text-sm text-yuni-coffee/80 leading-relaxed">
+                                不套用制式模板，在施作前透過充分溝通，先懂妳的五官比例、日常妝容習慣與真正想要的感覺。
+                            </p>
+                        </div>
+                        <div class="mt-6 w-8 h-1 rounded-full bg-yuni-oat"></div>
+                    </div>
+
+                    <div class="bg-yuni-bg p-6 rounded-3xl border border-yuni-oat/40 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                        <div>
+                            <span class="block text-xs font-mono text-yuni-caramel tracking-wider whitespace-nowrap">02 / DESIGN FOR YOU</span>
+                            <h4 class="font-serif text-2xl font-bold text-yuni-caramel mt-2 mb-3">予妳</h4>
+                            <p class="text-sm text-yuni-coffee/80 leading-relaxed">
+                                結合專業美感與細膩手法，為妳量身調整眉峰、眉尾弧度與柔霧濃淡，給予最適合妳的專屬設計。
+                            </p>
+                        </div>
+                        <div class="mt-6 w-8 h-1 rounded-full bg-yuni-caramel"></div>
+                    </div>
+
+                    <div class="bg-yuni-bg p-6 rounded-3xl border border-yuni-oat/40 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                        <div>
+                            <span class="block text-xs font-mono text-yuni-caramel tracking-widest whitespace-nowrap">03 / BE YOURSELF</span>
+                            <h4 class="font-serif text-2xl font-bold text-yuni-coffee mt-2 mb-3">像妳</h4>
+                            <p class="text-sm text-yuni-coffee/80 leading-relaxed">
+                                褪去生硬線條感，最後留下的不是別人的影子，而是自然有神、依然最像妳自己的樣子。
+                            </p>
+                        </div>
+                        <div class="mt-6 w-8 h-1 rounded-full bg-yuni-coffee"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 品牌色彩規範 (可點擊複製 HEX) -->
+            <div class="bg-yuni-bg p-6 sm:p-8 rounded-3xl border border-yuni-oat/40">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+                    <div>
+                        <h3 class="font-serif text-lg font-semibold">品牌視覺識別色彩系統（Brand Color Palette）</h3>
+                        <p class="text-xs text-yuni-coffee/70 mt-1">點擊任一色票卡片，即可複製色碼應用於設計規範</p>
+                    </div>
+                    <span class="text-xs text-yuni-caramel bg-yuni-surface px-3 py-1 rounded-full border border-yuni-oat/40 w-fit">互動色票系統</span>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-5 gap-4">
+                    <!-- 色票 1 -->
+                    <button onclick="copyHex('#F5F2EC', '柔霧米白')" class="group text-left bg-yuni-surface p-3 rounded-2xl border border-yuni-oat/40 hover:border-yuni-caramel transition-all focus:outline-none">
+                        <div class="h-20 rounded-xl bg-[#F5F2EC] border border-yuni-oat/40 mb-3 flex items-end p-2">
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-white/80 text-yuni-coffee opacity-0 group-hover:opacity-100 transition-opacity">點擊複製</span>
+                        </div>
+                        <p class="font-medium text-sm">柔霧米白</p>
+                        <p class="text-xs font-mono text-yuni-caramel mt-0.5">#F5F2EC</p>
+                    </button>
+
+                    <!-- 色票 2 -->
+                    <button onclick="copyHex('#CDB8A3', '燕麥奶茶')" class="group text-left bg-yuni-surface p-3 rounded-2xl border border-yuni-oat/40 hover:border-yuni-caramel transition-all focus:outline-none">
+                        <div class="h-20 rounded-xl bg-[#CDB8A3] mb-3 flex items-end p-2">
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-white/80 text-yuni-coffee opacity-0 group-hover:opacity-100 transition-opacity">點擊複製</span>
+                        </div>
+                        <p class="font-medium text-sm">燕麥奶茶</p>
+                        <p class="text-xs font-mono text-yuni-caramel mt-0.5">#CDB8A3</p>
+                    </button>
+
+                    <!-- 色票 3 -->
+                    <button onclick="copyHex('#A77C5B', '暖焦糖棕')" class="group text-left bg-yuni-surface p-3 rounded-2xl border border-yuni-oat/40 hover:border-yuni-caramel transition-all focus:outline-none">
+                        <div class="h-20 rounded-xl bg-[#A77C5B] mb-3 flex items-end p-2">
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-white/80 text-yuni-coffee opacity-0 group-hover:opacity-100 transition-opacity">點擊複製</span>
+                        </div>
+                        <p class="font-medium text-sm">暖焦糖棕</p>
+                        <p class="text-xs font-mono text-yuni-caramel mt-0.5">#A77C5B</p>
+                    </button>
+
+                    <!-- 色票 4 -->
+                    <button onclick="copyHex('#A75A35', '深木棕')" class="group text-left bg-yuni-surface p-3 rounded-2xl border border-yuni-oat/40 hover:border-yuni-caramel transition-all focus:outline-none">
+                        <div class="h-20 rounded-xl bg-[#A75A35] mb-3 flex items-end p-2">
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-white/80 text-yuni-coffee opacity-0 group-hover:opacity-100 transition-opacity">點擊複製</span>
+                        </div>
+                        <p class="font-medium text-sm">深木棕</p>
+                        <p class="text-xs font-mono text-yuni-caramel mt-0.5">#A75A35</p>
+                    </button>
+
+                    <!-- 色票 5 -->
+                    <button onclick="copyHex('#352F27', '碳咖啡')" class="col-span-2 sm:col-span-1 group text-left bg-yuni-surface p-3 rounded-2xl border border-yuni-oat/40 hover:border-yuni-caramel transition-all focus:outline-none">
+                        <div class="h-20 rounded-xl bg-[#352F27] mb-3 flex items-end p-2">
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-white/80 text-yuni-coffee opacity-0 group-hover:opacity-100 transition-opacity">點擊複製</span>
+                        </div>
+                        <p class="font-medium text-sm">碳咖啡</p>
+                        <p class="text-xs font-mono text-yuni-caramel mt-0.5">#352F27</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第二章：市場洞察與策略定位 (PEST / SWOT / STP / TA 互動切換) -->
+    <section id="research" class="py-16 sm:py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mb-10">
+                <span class="text-xs font-semibold tracking-[0.2em] text-yuni-wood uppercase">CHAPTER 02 — MARKET INSIGHT</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold mt-2">市場環境洞察與精準受眾定位</h2>
+                <p class="text-yuni-coffee/75 mt-3 text-sm sm:text-base leading-relaxed">
+                    透過 PEST 外部環境掃描與 SWOT 交叉矩陣，找出新創個人工作室在紅海市場中的切入點，鎖定重視自然感與低社交壓力的在地女性客群。
+                </p>
+            </div>
+
+            <!-- 互動分頁籤按鈕 -->
+            <div class="flex flex-wrap gap-2 sm:gap-3 mb-8 border-b border-yuni-oat/40 pb-4" role="tablist">
+                <button onclick="switchTab('stp')" id="tab-stp" class="tab-btn px-5 py-2.5 rounded-2xl text-sm font-medium bg-yuni-coffee text-yuni-bg transition-all">
+                    STP 市場定位與 TA 受眾
+                </button>
+                <button onclick="switchTab('swot')" id="tab-swot" class="tab-btn px-5 py-2.5 rounded-2xl text-sm font-medium bg-yuni-surface text-yuni-coffee/80 hover:bg-yuni-oat/30 transition-all">
+                    SWOT 與交叉策略矩陣
+                </button>
+                <button onclick="switchTab('pest')" id="tab-pest" class="tab-btn px-5 py-2.5 rounded-2xl text-sm font-medium bg-yuni-surface text-yuni-coffee/80 hover:bg-yuni-oat/30 transition-all">
+                    PEST 外部環境分析
+                </button>
+            </div>
+
+            <!-- 分頁內容 1：STP 與 TA -->
+            <div id="panel-stp" class="tab-panel space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- S 市場區隔 -->
+                    <div class="bg-yuni-surface p-6 sm:p-7 rounded-3xl border border-yuni-oat/40 shadow-card">
+                        <div class="w-10 h-10 rounded-2xl bg-yuni-oat/30 text-yuni-wood font-serif font-bold flex items-center justify-center mb-4">S</div>
+                        <h3 class="font-serif text-lg font-semibold mb-3">市場區隔 Segmentation</h3>
+                        <ul class="space-y-2.5 text-sm text-yuni-coffee/85">
+                            <li class="flex items-start gap-2"><span class="text-yuni-wood mt-1">•</span><span><strong>年齡區隔：</strong>25～35 歲女性上班族與輕熟女。</span></li>
+                            <li class="flex items-start gap-2"><span class="text-yuni-wood mt-1">•</span><span><strong>需求區隔：</strong>眉型不完整、眉毛稀疏、高低眉與希望改善眉型者。</span></li>
+                            <li class="flex items-start gap-2"><span class="text-yuni-wood mt-1">•</span><span><strong>心理區隔：</strong>重視個人風格、自然美感與舒適無壓的服務體驗。</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- T 目標市場 -->
+                    <div class="bg-yuni-surface p-6 sm:p-7 rounded-3xl border border-yuni-oat/40 shadow-card">
+                        <div class="w-10 h-10 rounded-2xl bg-yuni-caramel/20 text-yuni-caramel font-serif font-bold flex items-center justify-center mb-4">T</div>
+                        <h3 class="font-serif text-lg font-semibold mb-3">目標市場 Targeting</h3>
+                        <ul class="space-y-2.5 text-sm text-yuni-coffee/85">
+                            <li class="flex items-start gap-2"><span class="text-yuni-caramel mt-1">•</span><span><strong>地理鎖定：</strong>居住或活動於桃園平鎮及中壢生活圈之女性。</span></li>
+                            <li class="flex items-start gap-2"><span class="text-yuni-caramel mt-1">•</span><span><strong>生活型態：</strong>希望節省日常畫眉時間，追求偽素顏自然感。</span></li>
+                            <li class="flex items-start gap-2"><span class="text-yuni-caramel mt-1">•</span><span><strong>服務期待：</strong>看重一對一細心溝通與自在不推銷的空間感。</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- P 市場定位 -->
+                    <div class="bg-yuni-coffee text-yuni-bg p-6 sm:p-7 rounded-3xl shadow-soft">
+                        <div class="w-10 h-10 rounded-2xl bg-yuni-oat/20 text-yuni-oat font-serif font-bold flex items-center justify-center mb-4">P</div>
+                        <h3 class="font-serif text-lg font-semibold mb-3">市場定位 Positioning</h3>
+                        <p class="text-sm text-yuni-bg/85 leading-relaxed mb-4">
+                            以「個人氣質」為出發點的客製化霧眉工作室，透過<strong>客製眉型設計、低社交壓力服務與細膩顧客關懷</strong>建立差異化。
+                        </p>
+                        <div class="p-3.5 rounded-2xl bg-white/10 border border-white/10">
+                            <span class="text-[11px] text-yuni-oat block">品牌核心主張</span>
+                            <span class="font-serif text-sm font-medium">「不複製漂亮，只設計像妳的眉。」</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TA 三大核心痛點 -->
+                <div class="bg-yuni-surface p-6 sm:p-7 rounded-3xl border border-yuni-oat/40">
+                    <h4 class="font-serif text-base font-semibold mb-4 text-yuni-wood">核心受眾（TA）三大痛點與溝通切角</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-2xl bg-yuni-bg flex items-center gap-4">
+                            <span class="text-2xl font-serif font-bold text-yuni-oat">01</span>
+                            <div>
+                                <p class="font-semibold text-sm">眉型不完整／高低眉</p>
+                                <p class="text-xs text-yuni-coffee/70 mt-0.5">訴求：依骨相與表情肌客製平衡眉型</p>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-yuni-bg flex items-center gap-4">
+                            <span class="text-2xl font-serif font-bold text-yuni-oat">02</span>
+                            <div>
+                                <p class="font-semibold text-sm">眉毛稀疏、素顏無神</p>
+                                <p class="text-xs text-yuni-coffee/70 mt-0.5">訴求：自然柔霧妝感，褪去生硬蠟筆感</p>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-yuni-bg flex items-center gap-4">
+                            <span class="text-2xl font-serif font-bold text-yuni-oat">03</span>
+                            <div>
+                                <p class="font-semibold text-sm">日常畫眉整理耗時</p>
+                                <p class="text-xs text-yuni-coffee/70 mt-0.5">訴求：早晨多睡 15 分鐘的從容日常</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 分頁內容 2：SWOT 與交叉策略 -->
+            <div id="panel-swot" class="tab-panel hidden space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div class="bg-yuni-surface p-6 rounded-3xl border border-yuni-oat/40">
+                        <span class="text-xs font-bold px-2.5 py-1 rounded-lg bg-yuni-wood/15 text-yuni-wood">S 內部優勢 Strengths</span>
+                        <ul class="mt-4 space-y-2 text-sm text-yuni-coffee/85">
+                            <li>• 個人工作室營運成本低，定價與服務彈性高</li>
+                            <li>• 專注客製化眉型設計，非流水線複製模板</li>
+                            <li>• 主打「低社交壓力」一對一安心服務體驗</li>
+                        </ul>
+                    </div>
+                    <div class="bg-yuni-surface p-6 rounded-3xl border border-yuni-oat/40">
+                        <span class="text-xs font-bold px-2.5 py-1 rounded-lg bg-yuni-coffee/10 text-yuni-coffee">W 內部劣勢 Weaknesses</span>
+                        <ul class="mt-4 space-y-2 text-sm text-yuni-coffee/85">
+                            <li>• 新創品牌知名度尚未建立</li>
+                            <li>• 初期作品案例與公開口碑累積較少</li>
+                            <li>• 一人工作室個人依賴程度高、產能有限</li>
+                        </ul>
+                    </div>
+                    <div class="bg-yuni-surface p-6 rounded-3xl border border-yuni-oat/40">
+                        <span class="text-xs font-bold px-2.5 py-1 rounded-lg bg-yuni-caramel/20 text-yuni-caramel">O 外部機會 Opportunities</span>
+                        <ul class="mt-4 space-y-2 text-sm text-yuni-coffee/85">
+                            <li>• 平鎮、中壢在地生活圈具備穩定美容需求</li>
+                            <li>• IG、Threads 與 Google 搜尋提供低成本曝光機會</li>
+                            <li>• 現代女性對個人化自然美感接受度大幅提升</li>
+                        </ul>
+                    </div>
+                    <div class="bg-yuni-surface p-6 rounded-3xl border border-yuni-oat/40">
+                        <span class="text-xs font-bold px-2.5 py-1 rounded-lg bg-yuni-oat/40 text-yuni-coffee">T 外部威脅 Threats</span>
+                        <ul class="mt-4 space-y-2 text-sm text-yuni-coffee/85">
+                            <li>• 霧眉市場同業多、競爭激烈</li>
+                            <li>• 市場充斥低價促銷與價格競爭</li>
+                            <li>• 半永久項目使消費者決策與信任門檻較高</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- TOWS 交叉策略重點 -->
+                <div class="bg-yuni-coffee text-yuni-bg p-6 sm:p-7 rounded-3xl">
+                    <h4 class="font-serif text-base font-semibold text-yuni-oat mb-4">SWOT 交叉策略行動方針</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+                        <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+                            <p class="font-semibold text-yuni-oat mb-1.5">SO 優勢 × 機會</p>
+                            <p class="text-xs text-yuni-bg/80 leading-relaxed">拓展平鎮中壢在地客群，發展客製化設計並強化個人品牌特色。</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+                            <p class="font-semibold text-yuni-oat mb-1.5">WO 劣勢 × 機會</p>
+                            <p class="text-xs text-yuni-bg/80 leading-relaxed">透過社群內容提升曝光，積極累積前期作品口碑並優化 LINE 預約流程。</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+                            <p class="font-semibold text-yuni-oat mb-1.5">ST 優勢 × 威脅</p>
+                            <p class="text-xs text-yuni-bg/80 leading-relaxed">維持營運彈性不打價格戰，以低社交壓力服務差異提升顧客信任。</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+                            <p class="font-semibold text-yuni-oat mb-1.5">WT 劣勢 × 威脅</p>
+                            <p class="text-xs text-yuni-bg/80 leading-relaxed">建立清晰品牌視覺辨識與透明標準化服務流程，降低首次預約門檻。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 分頁內容 3：PEST 外部環境 -->
+            <div id="panel-pest" class="tab-panel hidden">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div class="bg-yuni-surface p-6 rounded-3xl border border-yuni-oat/40">
+                        <div class="text-2xl font-serif font-bold text-yuni-wood mb-2">P <span class="text-sm font-sans font-normal text-yuni-coffee/70">政治與法規</span></div>
+                        <ul class="mt-4 space-y-2.5 text-sm text-yuni-coffee/85">
+                            <li>• 拋棄式針具與衛生安全規範</li>
+                            <li>• 消費者權益保障與資訊透明</li>
+                            <li>• 美容服務管理與標示要求</li>
+                        </ul>
+                    </div>
+                    <div class="bg-yuni-surface p-6 rounded-3xl border border-yuni-oat/40">
+                        <div class="text-2xl font-serif font-bold text-yuni-caramel mb-2">E <span class="text-sm font-sans font-normal text-yuni-coffee/70">經濟環境</span></div>
+                        <ul class="mt-4 space-y-2.5 text-sm text-yuni-coffee/85">
+                            <li>• 通膨下生活成本與可支配預算考量</li>
+                            <li>• 消費者會比較霧眉價格與包含項目（如補色）</li>
+                            <li>• 追求高性價比與長效維持度</li>
+                        </ul>
+                    </div>
+                    <div class="bg-yuni-surface p-6 rounded-3xl border border-yuni-oat/40">
+                        <div class="text-2xl font-serif font-bold text-yuni-wood mb-2">S <span class="text-sm font-sans font-normal text-yuni-coffee/70">社會文化</span></div>
+                        <ul class="mt-4 space-y-2.5 text-sm text-yuni-coffee/85">
+                            <li>• 審美轉向自然原生眉型與個人風格</li>
+                            <li>• 注重服務時間效率與交通便利性</li>
+                            <li>• 偏好安靜、舒適自在的「I人友善」體驗</li>
+                        </ul>
+                    </div>
+                    <div class="bg-yuni-surface p-6 rounded-3xl border border-yuni-oat/40">
+                        <div class="text-2xl font-serif font-bold text-yuni-caramel mb-2">T <span class="text-sm font-sans font-normal text-yuni-coffee/70">科技應用</span></div>
+                        <ul class="mt-4 space-y-2.5 text-sm text-yuni-coffee/85">
+                            <li>• IG Reels 與 Threads 短影音快速擴散</li>
+                            <li>• Google 商家在地搜尋成為決策關鍵</li>
+                            <li>• LINE 官方帳號一對一線上諮詢與預約</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第三章：賣方 4P 與服務行銷策略 -->
+    <section id="strategy" class="py-16 sm:py-24 bg-yuni-surface border-y border-yuni-oat/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mb-12">
+                <span class="text-xs font-semibold tracking-[0.2em] text-yuni-wood uppercase">CHAPTER 03 — SERVICE & MARKETING MIX</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold mt-2">賣方 4P 策略與服務體驗設計</h2>
+                <p class="text-yuni-coffee/75 mt-3 text-sm sm:text-base leading-relaxed">
+                    美業的核心在於「信任感」與「體驗細節」。本企劃將傳統 4P 延伸至服務行銷（人員、流程、有形展示、品質控管），打造透明安心的服務旅程。
+                </p>
+            </div>
+
+            <!-- 賣方 4P 卡片 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
+                <div class="bg-yuni-bg p-6 rounded-3xl border border-yuni-oat/40">
+                    <span class="text-xs font-mono text-yuni-wood">PRODUCT / 產品</span>
+                    <h3 class="font-serif text-lg font-semibold mt-1 mb-2">客製化自然霧眉</h3>
+                    <p class="text-sm text-yuni-coffee/80 leading-relaxed">
+                        以個人五官氣質為基礎進行一對一眉型設計，打造通透自然的柔霧妝感，建立市場區隔。
+                    </p>
+                </div>
+
+                <div class="bg-yuni-bg p-6 rounded-3xl border border-yuni-oat/40">
+                    <span class="text-xs font-mono text-yuni-wood">PRICE / 價格</span>
+                    <h3 class="font-serif text-lg font-semibold mt-1 mb-2">資訊透明無隱藏消費</h3>
+                    <p class="text-sm text-yuni-coffee/80 leading-relaxed">
+                        清楚呈現服務包含項目、補色機制與收費標準，避免現場強迫推銷，降低顧客心理防備。
+                    </p>
+                </div>
+
+                <div class="bg-yuni-bg p-6 rounded-3xl border border-yuni-oat/40">
+                    <span class="text-xs font-mono text-yuni-wood">PLACE / 通路</span>
+                    <h3 class="font-serif text-lg font-semibold mt-1 mb-2">全數位預約接觸點</h3>
+                    <p class="text-sm text-yuni-coffee/80 leading-relaxed">
+                        整合 IG、Threads 社群作品展示、Google 地圖在地搜尋與 LINE 線上諮詢，讓預約零阻礙。
+                    </p>
+                </div>
+
+                <div class="bg-yuni-bg p-6 rounded-3xl border border-yuni-oat/40">
+                    <span class="text-xs font-mono text-yuni-wood">PROMOTION / 推廣</span>
+                    <h3 class="font-serif text-lg font-semibold mt-1 mb-2">內容知識與口碑擴散</h3>
+                    <p class="text-sm text-yuni-coffee/80 leading-relaxed">
+                        透過真實作品案例分享、眉型設計知識科普與顧客真實回饋累積信任感與自然曝光。
+                    </p>
+                </div>
+            </div>
+
+            <!-- 服務行銷四大支柱 + 服務流程時間軸 -->
+            <div class="bg-yuni-bg p-6 sm:p-10 rounded-3xl border border-yuni-oat/40">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <!-- 左側：服務行銷 4 要素 -->
+                    <div class="lg:col-span-5 space-y-4">
+                        <span class="text-xs font-semibold text-yuni-wood tracking-wider uppercase">SERVICE MARKETING</span>
+                        <h3 class="font-serif text-xl sm:text-2xl font-bold">服務行銷四大關鍵</h3>
+                        <div class="space-y-3 pt-2">
+                            <div class="p-3.5 rounded-2xl bg-yuni-surface border border-yuni-oat/30">
+                                <p class="font-semibold text-sm text-yuni-wood">人員 People</p>
+                                <p class="text-xs text-yuni-coffee/80 mt-0.5">以專業耐心諮詢與細膩服務建立深層信任。</p>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-yuni-surface border border-yuni-oat/30">
+                                <p class="font-semibold text-sm text-yuni-wood">流程 Process</p>
+                                <p class="text-xs text-yuni-coffee/80 mt-0.5">讓諮詢、設計、施作與居家照護資訊清楚可循。</p>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-yuni-surface border border-yuni-oat/30">
+                                <p class="font-semibold text-sm text-yuni-wood">有形展示 Physical Evidence</p>
+                                <p class="text-xs text-yuni-coffee/80 mt-0.5">呈現真實作品、整潔空間環境與拋棄式衛生細節。</p>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-yuni-surface border border-yuni-oat/30">
+                                <p class="font-semibold text-sm text-yuni-wood">生產力與品質 Productivity & Quality</p>
+                                <p class="text-xs text-yuni-coffee/80 mt-0.5">持續追蹤留色狀況與顧客回饋，優化服務品質。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 右側：四步驟顧客體驗旅程 -->
+                    <div class="lg:col-span-7 bg-yuni-surface p-6 sm:p-8 rounded-3xl border border-yuni-oat/40">
+                        <h4 class="font-serif text-lg font-semibold mb-6 flex items-center justify-between">
+                            <span>標準化服務體驗流程</span>
+                            <span class="text-xs font-sans font-normal text-yuni-caramel">全程低社交壓力體驗</span>
+                        </h4>
+
+                        <div class="space-y-6 relative before:content-[''] before:absolute before:left-5 before:top-3 before:bottom-3 before:w-0.5 before:bg-yuni-oat/60">
+                            <!-- Step 1 -->
+                            <div class="relative flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-yuni-coffee text-yuni-bg font-serif text-sm font-bold flex items-center justify-center shrink-0 z-10">01</div>
+                                <div class="pt-1">
+                                    <h5 class="font-semibold text-base">深度溝通與諮詢</h5>
+                                    <p class="text-sm text-yuni-coffee/75 mt-1">了解日常妝容習慣、期望風格與膚質狀況，說明完整注意事項。</p>
+                                </div>
+                            </div>
+                            <!-- Step 2 -->
+                            <div class="relative flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-yuni-caramel text-yuni-bg font-serif text-sm font-bold flex items-center justify-center shrink-0 z-10">02</div>
+                                <div class="pt-1">
+                                    <h5 class="font-semibold text-base">一對一客製眉型設計</h5>
+                                    <p class="text-sm text-yuni-coffee/75 mt-1">依據臉部骨骼與肌肉動態繪製眉框，反覆微調直到雙方確認滿意才開始施作。</p>
+                                </div>
+                            </div>
+                            <!-- Step 3 -->
+                            <div class="relative flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-yuni-wood text-yuni-bg font-serif text-sm font-bold flex items-center justify-center shrink-0 z-10">03</div>
+                                <div class="pt-1">
+                                    <h5 class="font-semibold text-base">衛生安全精細施作</h5>
+                                    <p class="text-sm text-yuni-coffee/75 mt-1">一人一套全新拋棄式針具，採用植物性色乳輕柔上色，過程舒適可安心休息。</p>
+                                </div>
+                            </div>
+                            <!-- Step 4 -->
+                            <div class="relative flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-yuni-oat text-yuni-coffee font-serif text-sm font-bold flex items-center justify-center shrink-0 z-10">04</div>
+                                <div class="pt-1">
+                                    <h5 class="font-semibold text-base">居家照護與留色追蹤</h5>
+                                    <p class="text-sm text-yuni-coffee/75 mt-1">提供圖文並茂的修復期保養指南，並透過 LINE 貼心關懷留色狀態與預約補色。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第四章：數位導流與內容落地執行 (IG / SEO / Google Ads / GEO) -->
+    <section id="digital" class="py-16 sm:py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mb-12">
+                <span class="text-xs font-semibold tracking-[0.2em] text-yuni-wood uppercase">CHAPTER 04 — DIGITAL EXECUTION</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold mt-2">全渠道數位導流與內容執行藍圖</h2>
+                <p class="text-yuni-coffee/75 mt-3 text-sm sm:text-base leading-relaxed">
+                    結合「社群種草（IG/Threads）」與「搜尋收網（SEO/GEO/Google Ads）」，以精準小預算發揮最大在地轉換效益。
+                </p>
+            </div>
+
+            <!-- 1. IG 每月內容行銷排程 -->
+            <div class="bg-yuni-surface p-6 sm:p-8 rounded-3xl border border-yuni-oat/40 shadow-card mb-8">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+                    <div>
+                        <span class="text-xs font-semibold text-yuni-wood">SOCIAL MEDIA CONTENT PLAN</span>
+                        <h3 class="font-serif text-xl font-bold mt-1">IG 每月四週循環內容行銷規劃</h3>
+                    </div>
+                    <span class="text-xs px-3 py-1 rounded-full bg-yuni-bg text-yuni-caramel border border-yuni-oat/40 w-fit">每則貼文皆附 LINE 諮詢引導 CTA</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="p-5 rounded-2xl bg-yuni-bg border border-yuni-oat/30">
+                        <span class="text-xs font-bold text-yuni-wood">WEEK 01｜第 1 週</span>
+                        <h4 class="font-serif text-lg font-semibold mt-1 mb-2">真實作品案例</h4>
+                        <p class="text-xs text-yuni-coffee/75 leading-relaxed">展示霧眉前後對比、不同臉型調整細節與自然留色紀錄，建立視覺信任感。</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-yuni-bg border border-yuni-oat/30">
+                        <span class="text-xs font-bold text-yuni-caramel">WEEK 02｜第 2 週</span>
+                        <h4 class="font-serif text-lg font-semibold mt-1 mb-2">眉型設計知識</h4>
+                        <p class="text-xs text-yuni-coffee/75 leading-relaxed">分享圓臉、長臉適合的眉型比例、日常修眉技巧，展現專業審美觀點。</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-yuni-bg border border-yuni-oat/30">
+                        <span class="text-xs font-bold text-yuni-wood">WEEK 03｜第 3 週</span>
+                        <h4 class="font-serif text-lg font-semibold mt-1 mb-2">服務流程與環境</h4>
+                        <p class="text-xs text-yuni-coffee/75 leading-relaxed">開箱工作室舒適空間、拋棄式衛生消毒流程與一對一設計過程，消除不安。</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-yuni-bg border border-yuni-oat/30">
+                        <span class="text-xs font-bold text-yuni-caramel">WEEK 04｜第 4 週</span>
+                        <h4 class="font-serif text-lg font-semibold mt-1 mb-2">顧客常見問題 Q&A</h4>
+                        <p class="text-xs text-yuni-coffee/75 leading-relaxed">透過限動「你問我答」互動，解答痛感、修復期與補色疑問，促成私訊諮詢。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. SEO 關鍵字矩陣 & Google Ads / GEO 策略 -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- SEO 關鍵字矩陣 (7欄) -->
+                <div class="lg:col-span-7 bg-yuni-surface p-6 sm:p-8 rounded-3xl border border-yuni-oat/40 shadow-card flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-semibold text-yuni-wood">SEO KEYWORD MATRIX</span>
+                        <h3 class="font-serif text-xl font-bold mt-1 mb-4">三維度 SEO 關鍵字佈局矩陣</h3>
+                        <p class="text-xs sm:text-sm text-yuni-coffee/75 mb-5">
+                            將以下關鍵字自然融入官網服務介紹、FAQ 問答與在地資訊中，精準承接不同搜尋意圖的潛在顧客：
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="p-4 rounded-2xl bg-yuni-bg">
+                                <span class="text-xs font-semibold text-yuni-wood block mb-1">服務詞</span>
+                                <span class="text-[11px] text-yuni-coffee/60 block mb-3">意圖：了解服務內容</span>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2.5 py-1 rounded-lg bg-yuni-surface text-xs border border-yuni-oat/40">霧眉</span>
+                                    <span class="px-2.5 py-1 rounded-lg bg-yuni-surface text-xs border border-yuni-oat/40">霧眉服務</span>
+                                    <span class="px-2.5 py-1 rounded-lg bg-yuni-surface text-xs border border-yuni-oat/40">客製眉型</span>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-yuni-bg">
+                                <span class="text-xs font-semibold text-yuni-caramel block mb-1">需求詞</span>
+                                <span class="text-[11px] text-yuni-coffee/60 block mb-3">意圖：尋找解決方案</span>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2.5 py-1 rounded-lg bg-yuni-surface text-xs border border-yuni-oat/40">眉型不完整</span>
+                                    <span class="px-2.5 py-1 rounded-lg bg-yuni-surface text-xs border border-yuni-oat/40">眉毛稀疏</span>
+                                    <span class="px-2.5 py-1 rounded-lg bg-yuni-surface text-xs border border-yuni-oat/40">日常整理</span>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-yuni-bg">
+                                <span class="text-xs font-semibold text-yuni-coffee block mb-1">地區詞</span>
+                                <span class="text-[11px] text-yuni-coffee/60 block mb-3">意圖：尋找在地店家</span>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2.5 py-1 rounded-lg bg-yuni-surface text-xs border border-yuni-oat/40">平鎮霧眉</span>
+                                    <span class="px-2.5 py-1 rounded-lg bg-yuni-surface text-xs border border-yuni-oat/40">中壢霧眉</span>
+                                    <span class="px-2.5 py-1 rounded-lg bg-yuni-surface text-xs border border-yuni-oat/40">附近霧眉</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-yuni-oat/40 text-xs text-yuni-coffee/75">
+                        <strong>內容持續優化機制：</strong>定期觀察 Google Search Console 搜尋曝光與顧客常問問題，動態更新網頁內容。
+                    </div>
+                </div>
+
+                <!-- Google Ads & GEO 在地搜尋 (5欄) -->
+                <div class="lg:col-span-5 bg-yuni-coffee text-yuni-bg p-6 sm:p-8 rounded-3xl shadow-soft flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-semibold text-yuni-oat tracking-wider">PAID ADS & LOCAL GEO</span>
+                        <h3 class="font-serif text-xl font-bold mt-1 mb-4">Google 關鍵字廣告與在地商家佈局</h3>
+                        
+                        <!-- 預算與投放指標 -->
+                        <div class="grid grid-cols-2 gap-3 mb-5">
+                            <div class="p-3.5 rounded-2xl bg-white/10">
+                                <span class="text-[11px] text-yuni-oat block">每月精準廣告預算</span>
+                                <span class="font-serif text-xl font-bold mt-0.5 block">NT$ 1,500</span>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-white/10">
+                                <span class="text-[11px] text-yuni-oat block">核心鎖定區域</span>
+                                <span class="font-serif text-base font-bold mt-1 block">平鎮・中壢地區</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 text-xs sm:text-sm text-yuni-bg/85">
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-yuni-oat font-bold">01</span>
+                                <span><strong>廣告文案溝通重點：</strong>強調客製化眉型、自然柔霧效果與低社交壓力體驗，導流至 LINE 諮詢。</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-yuni-oat font-bold">02</span>
+                                <span><strong>GEO 在地商家優化：</strong>確保商家名稱、地址、服務項目與聯絡資訊一致，建立在地內容並鼓勵顧客留下真實五星評價。</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-yuni-oat font-bold">03</span>
+                                <span><strong>一鍵串接預約行動：</strong>讓搜尋「平鎮霧眉」的顧客能從搜尋結果直接點擊進入線上預約。</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-white/15 text-xs text-yuni-oat font-serif">
+                        「讓內容被找到，讓服務值得信任，讓預約更容易發生。」
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第五章：企劃落地展示 — 對外官網原型模擬器 -->
+    <section id="mockup" class="py-16 sm:py-24 bg-yuni-surface border-t border-yuni-oat/30">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-xs font-semibold tracking-[0.2em] text-yuni-wood uppercase">CHAPTER 05 — LIVE LANDING PAGE PROTOTYPE</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold mt-2">企劃落地成果：顧客端官網原型預覽</h2>
+                <p class="text-yuni-coffee/75 mt-3 text-sm sm:text-base">
+                    以下將本企劃的 STP 定位、SEO 關鍵字（平鎮／中壢霧眉）與服務流程，轉化為實際面向消費者的官網界面原型，展示企劃落地的完整執行力。
+                </p>
+            </div>
+
+            <!-- 模擬瀏覽器外框 -->
+            <div class="rounded-3xl border border-yuni-oat/60 bg-yuni-bg shadow-soft overflow-hidden">
+                <!-- 瀏覽器頂部工具列 -->
+                <div class="bg-[#EAE3D7] px-4 py-3 flex items-center justify-between border-b border-yuni-oat/40">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-[#D98A7C]"></span>
+                        <span class="w-3 h-3 rounded-full bg-[#E2C08D]"></span>
+                        <span class="w-3 h-3 rounded-full bg-[#9BB094]"></span>
+                    </div>
+                    <div class="bg-yuni-surface/90 px-4 py-1 rounded-full text-xs text-yuni-coffee/70 font-mono">
+                        https://yuni-brow-studio.tw
+                    </div>
+                    <span class="text-[11px] text-yuni-caramel font-medium hidden sm:inline">顧客視角預覽</span>
+                </div>
+
+                <!-- 模擬官網內部畫面 -->
+                <div class="p-6 sm:p-10 space-y-10">
+                    <!-- 官網 Hero -->
+                    <div class="text-center max-w-xl mx-auto space-y-4 py-4">
+                        <span class="text-xs tracking-[0.25em] text-yuni-caramel">桃園平鎮・中壢客製化霧眉工作室</span>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-yuni-coffee">不複製漂亮，只設計像妳的眉。</h3>
+                        <p class="text-sm text-yuni-coffee/80 leading-relaxed">
+                            專為在意自然妝感、不喜歡推銷壓力的妳打造。一對一細心溝通，改善眉型不完整與眉毛稀疏困擾，讓每個早晨都能多睡 15 分鐘。
+                        </p>
+                        <div class="pt-2">
+                            <button onclick="openBookingModal()" class="px-6 py-3 rounded-full bg-yuni-wood text-white text-sm font-medium hover:bg-yuni-coffee transition-colors shadow-sm">
+                                LINE 線上預約一對一眉型諮詢
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 官網常見問題 FAQ (融入 SEO 關鍵字) -->
+                    <div class="max-w-2xl mx-auto bg-yuni-surface p-6 rounded-2xl border border-yuni-oat/40">
+                        <h4 class="font-serif text-base font-semibold mb-4 text-center">霧眉常見問題 FAQ</h4>
+                        <div class="space-y-2.5 text-sm">
+                            <details class="group p-3.5 rounded-xl bg-yuni-bg cursor-pointer">
+                                <summary class="font-medium flex items-center justify-between list-none">
+                                    <span>Q1. 霧眉後會不會很像蠟筆小新、有過渡期嗎？</span>
+                                    <span class="text-yuni-caramel group-open:rotate-180 transition-transform">▾</span>
+                                </summary>
+                                <p class="text-xs text-yuni-coffee/80 mt-2.5 leading-relaxed">
+                                    予妳主打自然柔霧妝感，施作後就像刷了淡淡眉粉一樣自然，不會有厚重結痂與生硬框線，隔天上班、約會都能自然出門。
+                                </p>
+                            </details>
+                            <details class="group p-3.5 rounded-xl bg-yuni-bg cursor-pointer">
+                                <summary class="font-medium flex items-center justify-between list-none">
+                                    <span>Q2. 我有高低眉或眉毛稀疏，也可以做客製眉型嗎？</span>
+                                    <span class="text-yuni-caramel group-open:rotate-180 transition-transform">▾</span>
+                                </summary>
+                                <p class="text-xs text-yuni-coffee/80 mt-2.5 leading-relaxed">
+                                    沒問題！施作前會花時間觀察妳的臉型比例與表情肌肉，一對一繪製調整眉型，確認完全滿意後才會開始操作。
+                                </p>
+                            </details>
+                            <details class="group p-3.5 rounded-xl bg-yuni-bg cursor-pointer">
+                                <summary class="font-medium flex items-center justify-between list-none">
+                                    <span>Q3. 工作室地點在哪裡？如何預約？</span>
+                                    <span class="text-yuni-caramel group-open:rotate-180 transition-transform">▾</span>
+                                </summary>
+                                <p class="text-xs text-yuni-coffee/80 mt-2.5 leading-relaxed">
+                                    工作室位於桃園平鎮、中壢生活圈（採完全預約制），歡迎點擊上方按鈕加入官方 LINE 詢問可預約時段。
+                                </p>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾結語 (Footer) -->
+    <footer class="bg-yuni-coffee text-yuni-bg py-14">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
+            <p class="font-serif text-xl sm:text-2xl font-medium tracking-wide text-yuni-oat">
+                「不複製漂亮，只設計像妳的眉。」
+            </p>
+            <p class="text-sm text-yuni-bg/75 max-w-lg mx-auto leading-relaxed">
+                以理解、客製與細緻服務，陪每位顧客找到適合自己的樣子。
+            </p>
+            <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-yuni-bg/60">
+                <span>予妳 YUNI 霧眉品牌整合行銷企劃｜作品集展示網頁</span>
+                <span>企劃製作：邱亭瑜</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 模擬預約彈窗 (取代 alert) -->
+    <div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+        <div class="bg-yuni-surface text-yuni-coffee max-w-md w-full p-6 sm:p-8 rounded-3xl border border-yuni-oat shadow-2xl space-y-4">
+            <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold text-yuni-wood bg-yuni-oat/30 px-3 py-1 rounded-full">官網原型互動提示</span>
+                <button onclick="closeBookingModal()" class="text-yuni-coffee/60 hover:text-yuni-coffee text-lg">&times;</button>
+            </div>
+            <h4 class="font-serif text-xl font-bold">導向官方 LINE 諮詢預約</h4>
+            <p class="text-sm text-yuni-coffee/80 leading-relaxed">
+                在實際上線的顧客官網中，點擊此按鈕將直接開啟 <strong>予妳 YUNI 官方 LINE 帳號</strong>（桃園平鎮・中壢工作室），完成「搜尋 → 瀏覽官網 → LINE 預約」的轉換閉環。
+            </p>
+            <div class="pt-2 flex justify-end">
+                <button onclick="closeBookingModal()" class="px-5 py-2.5 rounded-2xl bg-yuni-coffee text-yuni-bg text-sm font-medium hover:bg-yuni-wood transition-colors">
+                    了解，返回作品集
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 互動功能腳本 -->
+    <script>
+        // 1. 複製品牌色碼並顯示提示框
+        function copyHex(hex, name) {
+            const tempInput = document.createElement('input');
+            tempInput.value = hex;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = `已複製「${name}」色碼：${hex}`;
+            
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2500);
+        }
+
+        // 2. 市場分析分頁籤切換 (STP / SWOT / PEST)
+        function switchTab(tabName) {
+            // 隱藏所有面板
+            document.querySelectorAll('.tab-panel').forEach(panel => {
+                panel.classList.add('hidden');
+            });
+            // 重設所有按鈕樣式
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-yuni-coffee', 'text-yuni-bg');
+                btn.classList.add('bg-yuni-surface', 'text-yuni-coffee/80');
+            });
+
+            // 顯示目標面板並高亮按鈕
+            document.getElementById(`panel-${tabName}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-${tabName}`);
+            activeBtn.classList.remove('bg-yuni-surface', 'text-yuni-coffee/80');
+            activeBtn.classList.add('bg-yuni-coffee', 'text-yuni-bg');
+        }
+
+        // 3. 模擬預約彈窗開關
+        function openBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    </script>
+</body>
+</html>
